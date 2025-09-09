@@ -56,7 +56,6 @@ class MiniLink():
 
             self.updateMessageList()
 
-            print(f"[{CLI_NAME}] Press 'm' key to open the memu.")
             return 0
 
         except Exception as err:
