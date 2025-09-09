@@ -1,0 +1,117 @@
+<?xml version="1.0" ?>
+<params>
+    <version>0.1</version>
+    <typedef name="PARAM">
+
+        <struct name="header">
+            <description>파라미터 관리를 위한 메타데이터 헤더</description>
+            <field name="version" type="uint8_t" readonly="true"></field>
+            <field name="subVersion" type="uint8_t" readonly="true"></field>
+            <field name="length" type="uint16_t" units="byte" readonly="true"></field>
+        </struct>
+
+        <struct name="ins">
+            <description></description>
+            <struct name="imu0">
+                <description>ICM-42688-P 설정 값</description>
+                <struct name="acc">
+                    <field name="sensitivity" type="float" units=""></field>
+                    <struct name="offset">
+                        <field name="roll" type="int16_t" units=""></field>
+                        <field name="pitch" type="int16_t" units=""></field>
+                        <field name="yaw" type="int16_t" units=""></field>
+                    </struct>
+                </struct>
+                <struct name="gyro">
+                    <field name="sensitivity" type="float" units=""></field>
+                    <struct name="offset">
+                        <field name="roll" type="int16_t" units=""></field>
+                        <field name="pitch" type="int16_t" units=""></field>
+                        <field name="yaw" type="int16_t" units=""></field>
+                    </struct>
+                </struct>
+            </struct>
+        </struct>
+
+        <struct name="rc">
+            <description></description>
+            <field name="OVERRIDE_TIME" type="float" units=""></field>
+            <enum name="OPTIONS" type="uint16_t" bitmask="true">
+                <description></description>
+                <entry value="0" name=""></entry>
+                <entry value="1" name=""></entry>
+            </enum>
+            <enum name="PROTOCOLS" type="uint16_t">
+                <description></description>
+                <entry value="0" name=""></entry>
+                <entry value="1" name=""></entry>
+            </enum>
+            <field name="FS_TIMEOUT" type="float" units=""></field>
+            <enum name="reversedMask" type="uint16_t" units="">
+                <description></description>
+                <entry value="0" name=""></entry>
+                <entry value="1" name=""></entry>
+            </enum>
+            <struct name="channel[16]">
+                <field name="MIN" type="uint16_t" units=""></field>
+                <field name="MAX" type="uint16_t" units=""></field>
+                <field name="TRIM" type="uint16_t" units=""></field>
+                <field name="DZ" type="uint8_t" units=""></field>
+                <enum name="OPTION" type="uint16_t" units="">
+                </enum>
+            </struct>
+            <struct name="map">
+                <field name="THR" type="uint8_t" units=""/>
+                <field name="ROL" type="uint8_t" units=""/>
+                <field name="PIT" type="uint8_t" units=""/>
+                <field name="YAW" type="uint8_t" units=""/>
+            </struct>
+        </struct>
+
+        <struct name="serial[4]">
+            <description></description>
+            <enum name="baud" type="uint16_t" units=""></enum>
+            <enum name="protocol" type="uint8_t" units=""></enum>
+            <enum name="options" type="uint16_t" units=""></enum>
+        </struct>
+
+        <struct name="servo">
+            <description></description>
+            <field name="AUTO_TRIM" type="uint8_t" bit="1" units=""></field>
+            <field name="RATE" type="uint16_t" units=""></field>
+            <field name="DSHOT_RATE" type="uint8_t" bit="3" units=""></field>
+            <field name="DSHOT_ESC" type="uint8_t" bit="3" units=""></field>
+            <enum name="GPIO_MASK" type="uint32_t" bitmask="">
+                    <description>활성화할 서보 출력 핀을 지정하는 비트마스크입니다. 여러 핀을 동시에 선택할 수 있습니다.</description>
+            </enum>
+            <field name="RC_FS_MSK" type="uint16_t"></field>
+            <field name="_32_ENABLE" type="uint8_t" bit="1" units=""></field>
+
+            <struct name="channel[12]">
+                <field name="MIN" type="uint16_t" units=""></field>
+                <field name="MAX" type="uint16_t" units=""></field>
+                <field name="TRIM" type="uint16_t" units=""></field>
+                <enum name="REVERSED" type="uint8_t" bit="1">
+                    <description></description>
+                    <entry value="1" name="enable"></entry>
+                </enum>
+                <field name="FUNCTION" type="int16_t" units=""></field>
+            </struct>
+        </struct>
+
+        <struct name="pid">
+            <description></description>
+            <struct name="ANGLE">
+                <field name="roll" type="float" units=""></field>
+                <field name="pitch" type="float" units=""></field>
+                <field name="yaw" type="float" units=""></field>
+            </struct>
+            <struct name="RATE">
+                <field name="roll" type="float" units=""></field>
+                <field name="pitch" type="float" units=""></field>
+                <field name="yaw" type="float" units=""></field>
+            </struct>
+        </struct>
+
+    </typedef>
+</params>
