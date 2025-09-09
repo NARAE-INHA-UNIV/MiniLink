@@ -11,4 +11,4 @@ STM32-FC 데이터 읽기 & 파라미터 수정을 위한 PC용 Python 라이브
 
 ## Wiki
 
-- [API Reference](https://github.com/NARAE-INHA-UNIV/MiniLink/wiki/MiniLink)
+- [API Reference](https://github.com/NARAE-INHA-UNIV/MiniLink/wiki/API-Reference)
